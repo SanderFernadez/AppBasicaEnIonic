@@ -11,7 +11,13 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  homeOutline, homeSharp,
+  calculatorOutline, calculatorSharp,
+  languageOutline, languageSharp,
+  gridOutline, gridSharp,
+  personCircleOutline, personCircleSharp
+} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -25,35 +31,34 @@ const appPages: AppPage[] = [
   {
     title: 'Página Inicial',
     url: '/inicio',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: homeOutline,
+    mdIcon: homeSharp
   },
   {
     title: 'Sumadora',
     url: '/sumadora',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    iosIcon: calculatorOutline,
+    mdIcon: calculatorSharp
   },
   {
     title: 'Traductor de Números',
     url: '/traductor',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    iosIcon: languageOutline,
+    mdIcon: languageSharp
   },
   {
     title: 'Tabla de Multiplicar',
     url: '/tabla',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    iosIcon: gridOutline,
+    mdIcon: gridSharp
   },
   {
     title: 'Experiencia Personal',
     url: '/experiencia',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    iosIcon: personCircleOutline,
+    mdIcon: personCircleSharp
   }
 ];
-
 
 const Menu: React.FC = () => {
   const location = useLocation();
