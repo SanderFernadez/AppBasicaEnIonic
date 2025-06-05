@@ -16,7 +16,8 @@ import {
   calculatorOutline, calculatorSharp,
   languageOutline, languageSharp,
   gridOutline, gridSharp,
-  personCircleOutline, personCircleSharp
+  personCircleOutline, personCircleSharp,
+  star
 } from 'ionicons/icons';
 import './Menu.css';
 
@@ -67,7 +68,10 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Sander</IonListHeader>
+          <IonListHeader>
+            Sander
+            <IonIcon icon={star} style={{ color: '#FFD700', marginLeft: 8, verticalAlign: 'middle' }} />
+          </IonListHeader>
           <IonNote>sanderfernandez0812@gmail.com</IonNote>
           {appPages.map((appPage, index) => {
             return (
