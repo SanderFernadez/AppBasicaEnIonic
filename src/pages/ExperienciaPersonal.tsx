@@ -10,7 +10,7 @@ const ExperienciaPersonal: React.FC = () => (
       <IonCardContent>
         <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
           <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
+            src="https://www.youtube.com/embed/CrEtGLhyDtc?si=CT2Xxu549VXC_khw"
             title="Mi experiencia"
             style={{ position: 'absolute', top:0, left:0, width:'100%', height:'100%' }}
             frameBorder="0"
