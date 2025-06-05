@@ -1,8 +1,13 @@
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+import React from 'react';
+import { IonApp, IonRouterOutlet, IonSplitPane, IonPage, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
+import PaginaInicial from './pages/PaginaInicial';
+import Sumadora from './pages/Sumadora';
+import Traductor from './pages/Traductor';
+import TablaMultiplicar from './pages/TablaMultiplicar';
+import ExperienciaPersonal from './pages/ExperienciaPersonal';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,24 +41,24 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => {
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
-            </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />
-            </Route>
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonSplitPane contentId="main">
+        <Menu />
+        <IonPage id="main">
+          <IonRouterOutlet>
+            <Route path="/inicio" component={PaginaInicial} exact />
+            <Route path="/sumadora" component={Sumadora} exact />
+            <Route path="/traductor" component={Traductor} exact />
+            <Route path="/tabla" component={TablaMultiplicar} exact />
+            <Route path="/experiencia" component={ExperienciaPersonal} exact />
+            <Redirect exact from="/" to="/inicio" />
           </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  );
-};
+        </IonPage>
+      </IonSplitPane>
+    </IonReactRouter>
+  </IonApp>
+);
 
 export default App;
